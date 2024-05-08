@@ -87,5 +87,6 @@ Detect information about a video
 (defun video-complete-p (path)
   (let ((res
           (run
-           (format nil "ffprobe -v error -threads 0 -count_frames -i '~A'" path))))
+           (format nil "ffprobe -v error -threads ~D -count_frames -i '~A'"
+                   *probe-threads* path))))
     (string= res "")))

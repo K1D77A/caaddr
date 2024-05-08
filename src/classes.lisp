@@ -1,10 +1,21 @@
 (in-package #:caaddr)
 
-(defclass daemon ()
+(defclass caaddr-daemon ()
   ((last-check
     :accessor last-check
     :initarg :last-check
-    :type local-time:timestamp)))
+    :initform (local-time:now)
+    :type local-time:timestamp)
+   (directory-tree
+    :accessor directory-tree
+    :initarg :directory-tree
+    :initform ())))
+
+(defclass dry-caaddr-daemon (caadr-daemon)
+  ())
+
+(defclass running-caadr-daemon (caadr-daemon)
+  ())
 
 (defclass video ()
   ((size

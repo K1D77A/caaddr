@@ -22,6 +22,8 @@
 
 (defun startup ()
   (load-config)
-  (configure-global-parameters))
+  (configure-global-parameters)
+  ;;if we restore a tree from persistence then this should be 'running
+  (setf *caaddr* (make-instance 'dry-caaddr-daemon)))
 
 

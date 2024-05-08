@@ -25,6 +25,18 @@
   :WATCH-DIRS)
 
 (def-environment-variable
+    *video-extensions*
+    '("mp4" "avi" "mkv" "mov")
+  "Extensions for videos."
+  :VIDEO-EXTENSIONS)
+
+(def-environment-variable
+    *probe-threads*
+  8
+  "Threads used for ffprobe"
+  :FFPROBE-THREADS)
+
+(def-environment-variable
     *remove-time*
     ()
   "How long to wait before removing a video after its completed."
