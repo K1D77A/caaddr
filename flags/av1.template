@@ -1,0 +1,1 @@
+ffmpeg -i '((NAME))' -c:v av1_qsv -preset 1 -async_depth 8 -extbrc 1 -b:v ((BITRATE)) -bufsize ((BITRATE*2)) -rc_init_occupancy ((BITRATE/2)) -adaptive_i 1 -adaptive_b 1 -b_strategy 1 -bf 7 -c:a ((AUDIO-CODEC)) '((OUTPUT-NAME))'

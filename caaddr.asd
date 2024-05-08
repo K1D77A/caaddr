@@ -7,8 +7,15 @@
   :version "0.0.1"
   :depends-on (#:cl-naive-store
                #:clog
-               #:alexandria)
+               #:alexandria
+               #:local-time
+               #:bordeaux-threads
+               #:log4cl
+               #:str
+               #:shasht)
   :serial t
   :pathname "src"
   :components ((:file "package")
-               (:file "caaddr")))
+               (:file "classes")
+               (:file "environment")
+               (:file "startup")))
